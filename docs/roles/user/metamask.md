@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Set up Metamask for EVM chains
 
 1. Connect Metamask to other EVM chains
