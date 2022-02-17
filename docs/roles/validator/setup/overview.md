@@ -1,3 +1,7 @@
+---
+slug: /roles/validator/setup
+---
+
 # Overview
 -----------
 An Axelar network validator participates in block creation, multi-party cryptography protocols, and voting.

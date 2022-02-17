@@ -53,7 +53,6 @@ const sidebars = {
               type: 'category',
               label: 'Setup',
               items: [
-                'roles/validator/setup',
                 'roles/validator/setup/overview',
                 'roles/validator/setup/vald-tofnd',
                 'roles/validator/setup/backup',
