@@ -10,7 +10,7 @@ const config = {
   tagline: 'Connecting Web3',
   url: 'https://docs.axelar.dev/',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Axelar', // Usually your GitHub org/user name.
