@@ -45,6 +45,25 @@ const sidebars = {
             'roles/node/axl-from-evm',
           ],
         },
+        {
+          type: 'category',
+          label: 'Validator',
+          items: [
+            {
+              type: 'category',
+              label: 'Setup',
+              items: [
+                'roles/validator/setup',
+                'roles/validator/setup/overview',
+                'roles/validator/setup/vald-tofnd',
+                'roles/validator/setup/backup',
+                'roles/validator/setup/register-broadcaster',
+                'roles/validator/setup/stake-axl',
+                'roles/validator/setup/health-check',
+              ],
+            },
+          ],
+        },
       ],
     },
   ],
