@@ -1,5 +1,4 @@
 # Health check
------
 
 Check the status of your validator.
 

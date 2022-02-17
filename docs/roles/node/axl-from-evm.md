@@ -1,4 +1,6 @@
-# Redeem AXL tokens from an EVM chain to Axelar using the terminal
+# Redeem AXL from an EVM chain
+
+Redeem AXL tokens from an EVM chain to Axelar using the terminal.
 
 :::danger
 
@@ -8,7 +10,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - Skill level: intermediate
-- Prerequisites for [Transfer AXL tokens from Axelar to an EVM chain using the terminal](/tutorials/axl-to-evm)
+- Prerequisites for [Send AXL to an EVM chain](/tutorials/axl-to-evm)
 
 ## Redeem AXL tokens from an EVM chain
 

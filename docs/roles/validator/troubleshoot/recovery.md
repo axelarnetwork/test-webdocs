@@ -1,6 +1,7 @@
-# Recover validator from mnemonic or secret keys
+# Recover from secret data
 
 [TODO revise]
+
 ## TODO: build tofnd from source?
 
 [TODO: new section on building tofnd?]

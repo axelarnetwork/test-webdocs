@@ -1,4 +1,4 @@
-# Join the Axelar network for the first time (genesis sync)
+# Genesis sync
 
 Start your Axelar node and download the blockchain.
 
@@ -10,7 +10,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 
 :::tip
 
-These instructions syncronize your Axelar node using the Axelar peer-to-peer network.  You can syncronize your node more quickly by downloading a recent snapshot of the blockchain as per [Join the Axelar network for the first time (quick sync)](setup/join.md).
+These instructions syncronize your Axelar node using the Axelar peer-to-peer network.  You can syncronize your node more quickly by downloading a recent snapshot of the blockchain as per [Quick sync](setup/join).
 
 :::
 

@@ -1,4 +1,6 @@
-# Back-up your validator mnemonics and secret keys
+# Back-up your secret data
+
+Back-up your validator mnemonics and secret keys.
 
 :::danger
 

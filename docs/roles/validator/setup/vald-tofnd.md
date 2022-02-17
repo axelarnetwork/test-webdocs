@@ -1,5 +1,6 @@
-# Launch validator companion processes for the first time
------------
+# Launch companion processes
+
+Launch validator companion processes for the first time.
 
 Axelar validators need two companion processes called `vald` and `tofnd`.
 

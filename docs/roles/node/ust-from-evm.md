@@ -1,4 +1,6 @@
-# Redeem UST tokens from an EVM chain to Terra using the terminal
+# Redeem UST from an EVM chain
+
+Redeem UST tokens from an EVM chain to Terra using the terminal.
 
 :::danger
 
@@ -8,7 +10,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - Skill level: intermediate
-- Prerequisites for [Transfer UST tokens from Terra to an EVM chain using the terminal](/tutorials/ust-to-evm)
+- Prerequisites for [Send UST to an EVM chain](/tutorials/ust-to-evm)
 - `{TERRA_DEST_ADDR}` is an address controlled by you on the Terra chain.  This is where your UST tokens will be redeemed.
 
 ## Redeem UST tokens from an EVM chain

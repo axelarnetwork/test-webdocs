@@ -1,5 +1,6 @@
-# [TODO revise] Troubleshoot start-up
------------
+# Start-up issues
+
+[TODO revise]
 
 If the process was missing, check if `tofnd` is running. Install the `nmap` command if you do not have it, and check the tofnd port
 

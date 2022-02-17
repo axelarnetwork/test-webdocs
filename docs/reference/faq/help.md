@@ -1,5 +1,7 @@
 # Checklist to ask for help
 
+[TODO revise]
+
 ## Instructions
 
 When asking for help, communicate your setup and the problem succinctly but thoroughly. Use the following template: 

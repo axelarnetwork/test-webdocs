@@ -1,4 +1,6 @@
-# Transfer AXL tokens from Axelar to an EVM chain using the terminal
+# Send AXL to an EVM chain
+
+Transfer AXL tokens from Axelar to an EVM chain using the terminal.
 
 :::danger
 

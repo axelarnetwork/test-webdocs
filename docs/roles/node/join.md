@@ -1,4 +1,4 @@
-# Join the Axelar network for the first time (quick sync)
+# Quick sync (recommended)
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 
 :::tip
 
-These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Join the Axelar network for the first time (genesis sync)](setup/join-genesis.md)
+These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Genesis sync](setup/join-genesis)
 
 :::
 

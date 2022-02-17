@@ -1,4 +1,6 @@
-# Set up your Ethereum Ropsten Testnet node
+# Ethereum
+
+Set up your Ethereum Ropsten Testnet node.
 
 ## Prerequisites
 - Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)

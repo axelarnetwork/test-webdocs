@@ -1,4 +1,4 @@
-# Basic management of your Axelar node
+# Basic node management
 
 Stop your node, backup your chain data, resume your node.  Check your AXL balance, get AXL tokens from the faucet.
 
@@ -9,7 +9,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 :::
 ## Prerequisites
 
-You have launched your Axelar node as per [Join the Axelar network for the first time](join.md).  Perhaps you have not yet completed downloading the blockchain.
+You have launched your Axelar node as per [Quick sync](join).  Perhaps you have not yet completed downloading the blockchain.
 
 ## Stop your Axelar node
 

@@ -1,4 +1,6 @@
-# Set up your Moonbeam (Moonbase-Alpha) Testnet node
+# Moonbeam
+
+Set up your Moonbeam (Moonbase-Alpha) Testnet node.
 
 ## Prerequisites
 - Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
