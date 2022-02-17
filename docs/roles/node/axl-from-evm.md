@@ -43,10 +43,13 @@ Use Metamask to send some wrapped AXL tokens on `{EVM_CHAIN}` to the new tempora
 
 !> :fire: Send only `Axelar` ERC20 tokens to `{EVM_TEMP_ADDR}`.  Any other token sent to `{EVM_TEMP_ADDR}` will be lost.
 
-> [!NOTE]
-> Third-party monitoring tools will automatically complete the remaining steps of this process.
->
-> Wait a few minutes then check your Axelar `validator` account AXL token balance as per [Basic management of your Axelar node](/setup/basic.md).
+:::note
+
+Third-party monitoring tools will automatically complete the remaining steps of this process.
+
+Wait a few minutes then check your Axelar `validator` account AXL token balance as per [Basic management of your Axelar node](/setup/basic.md).
+
+:::
 
 !> If you attempt the remaining steps while third-party monitoring tools are active then your commands are likely to conflict with third-party commands.  In this case you are likely to observe errors.  Deeper investigation might be needed to resolve conflicts and complete the transfer.
 !>
@@ -102,8 +105,11 @@ Output should contain
 successfully started signing batched commands with ID {BATCH_ID}
 ```
 
-> [!NOTE|label:Troubleshoot]
-> If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+:::note
+
+If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+
+:::
 
 Get the `execute_data`:
 
@@ -127,22 +133,25 @@ Use Metamask to send a transaction on `{EVM_CHAIN}` with the `execute_data` to t
 !>
 !> Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "Save"
 
-> [!TIP]
-> Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
->
-> ### 1. Documentation
-> [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
->
-> ### 2. Terminal
-> **Testnet:**
-> ```bash
-> ~/.axelar_testnet/bin/axelard q evm gateway-address {EVM_CHAIN}
-> ```
-> 
-> **Mainnet:**
-> ```bash
-> ~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
-> ```
+:::tip
+
+Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
+### 1. Documentation
+
+[Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+### 2. Terminal
+
+**Testnet:**
+```bash
+~/.axelar_testnet/bin/axelard q evm gateway-address {EVM_CHAIN}
+```
+
+**Mainnet:**
+```bash
+~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
+```
+
+:::
 
 To send a transaction to `{GATEWAY_ADDR}` using Metamask: paste hex from `execute_data` above into "Hex Data" field.  (Do not send tokens!)
 

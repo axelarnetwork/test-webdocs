@@ -83,7 +83,11 @@ Substitute your Ethereum RPC address for `my_ethereum_host`.  Be sure to set `st
 
 !> If `vald`, `tofnd` are stopped for too long then your validator might fail to produce a heartbeat transaction when needed.  The risk of this event can be reduced to near-zero if you promptly restart these processes shortly after a recent round of heartbeat transactions.
 
-> [!TIP] Heartbeat events are emitted every 50 blocks.  Your validator typically responds to heartbeat events within 1-2 blocks.  It should be safe to restart `vald`, `tofnd` at block heights that are 5-10 mod 50.
+:::tip
+
+Heartbeat events are emitted every 50 blocks.  Your validator typically responds to heartbeat events within 1-2 blocks.  It should be safe to restart `vald`, `tofnd` at block heights that are 5-10 mod 50.
+
+:::
 
 Stop your companion processes `vald`, `tofnd`.
 
@@ -121,7 +125,11 @@ You should see something like:
 
 For each external blockchain you selected earlier you must inform the Axelar network of your intent to maintain that chain.  This is accomplished via the `register-chain-maintainer` command.
 
-> [!TIP] You only need to register as a chain maintainer once.  If you've already done it for chain C then you do not need to do it again for chain C.
+:::tip
+
+You only need to register as a chain maintainer once.  If you've already done it for chain C then you do not need to do it again for chain C.
+
+:::
 
 Example: multiple EVM chains in one command:
 

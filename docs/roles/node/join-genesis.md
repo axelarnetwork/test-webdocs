@@ -2,13 +2,17 @@
 
 Start your Axelar node and download the blockchain.
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+:::danger
 
-> [!TIP] These instructions syncronize your Axelar node using the Axelar peer-to-peer network.  You can syncronize your node more quickly by downloading a recent snapshot of the blockchain as per [Join the Axelar network for the first time (quick sync)](setup/join.md).
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
 
-> [!NOTE] Choose to run your Axelar node on either testnet or mainnet.
->
-> Look for **Testnet:** or **Mainnet:** for instructions specific to your chosen network.
+:::
+
+:::tip
+
+These instructions syncronize your Axelar node using the Axelar peer-to-peer network.  You can syncronize your node more quickly by downloading a recent snapshot of the blockchain as per [Join the Axelar network for the first time (quick sync)](setup/join.md).
+
+:::
 
 ## Prerequisites
 
@@ -24,8 +28,11 @@ Your Axelar keyring is encrypted with a password you choose.  Your password must
 
 In what follows you will execute a shell script to join the Axelar testnet.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
 
-!> In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+:::caution
 
+In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+
+:::
 ## Join the Axelar testnet
 
 Clone the [`axelerate-community`](https://github.com/axelarnetwork/axelarate-community) repo:

@@ -18,11 +18,9 @@ Someone has already done it !!
 ## Solutions
 
 Now there can be two things that can happen:
-> [!TIP|style:flat|label:Case1]
-> Someone has already created pending-transfers, signed it and has already sent the `execute_data` to the apporpriate evm chain gateway contract
 
-> [!ATTENTION|style:flat|label:Case2]
-> Someone has already created pending-transfers, signed it but has not sent the `execute_data` to the apporpriate evm chain gateway contract
+1. Someone has already created pending-transfers, signed it and has already sent the `execute_data` to the apporpriate evm chain gateway contract
+2. Someone has already created pending-transfers, signed it but has not sent the `execute_data` to the apporpriate evm chain gateway contract
 
 ### Case 1:
 In this case you should already have the token minted to your address. You can verify by checking your linked address on the evm chain explorer.
