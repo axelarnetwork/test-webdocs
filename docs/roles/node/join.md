@@ -7,13 +7,17 @@ import TabItem from '@theme/TabItem';
 
 Start your Axelar node and download the blockchain.
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+:::danger
 
-> [!TIP] These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Join the Axelar network for the first time (genesis sync)](setup/join-genesis.md)
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
 
-> [!NOTE] Choose to run your Axelar node on either testnet or mainnet.
->
-> Look for **Testnet:** or **Mainnet:** for instructions specific to your chosen network.
+:::
+
+:::tip
+
+These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Join the Axelar network for the first time (genesis sync)](setup/join-genesis.md)
+
+:::
 
 ## Prerequisites
 
@@ -30,8 +34,11 @@ Your Axelar keyring is encrypted with a password you choose.  Your password must
 
 In what follows you will execute a shell script to join the Axelar testnet.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
 
-!> In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+:::caution
 
+In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+
+:::
 ## Join the Axelar network
 
 Clone the [`axelerate-community`](https://github.com/axelarnetwork/axelarate-community) repo:
@@ -113,15 +120,23 @@ View the streaming logs for your Axelar node:
 
 In a new terminal window:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+tail -f ~/.axelar/logs/axelard.log
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 tail -f ~/.axelar_testnet/logs/axelard.log
 ```
 
-**Mainnet:**
-```bash
-tail -f ~/.axelar/logs/axelard.log
-```
+</TabItem>
+</Tabs>
 
 You should see log messages for each block in the blockchain that your node downloads.
 
@@ -137,15 +152,23 @@ kill -9 $(pgrep -f "axelard start")
 
 Delete your `data` directory:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+rm -r ~/.axelar/.core/data
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 rm -r ~/.axelar_testnet/.core/data
 ```
 
-**Mainnet:**
-```bash
-rm -r ~/.axelar/.core/data
-```
+</TabItem>
+</Tabs>
 
 # Download the latest Axelar blockchain snapshot
 
@@ -163,29 +186,45 @@ Let `{SNAPSHOT_FILE}` denote the file name of the snapshot you downloaded.  Exam
 
 Decompress the downloaded snapshot into your `data` directory:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar/.core
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 ## Resume your node
 
 Resume your Axelar node with the latest version of axelar-core:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n testnet
 ```
 
-**Mainnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
-```
+</TabItem>
+</Tabs>
 
 Your Axelar node will launch and resume downloading the blockchain.  You should see log messages for new blocks.
 
