@@ -99,6 +99,16 @@ const sidebars = {
         'releases/testnet',
       ],
     },
+    {
+      type: 'category',
+      label: 'Reference',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'reference/extra-commands',
+        'reference/useful-links',
+      ],
+    },
   ],
 };
 
