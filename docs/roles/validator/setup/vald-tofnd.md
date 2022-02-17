@@ -32,7 +32,7 @@ KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/v
 
 :::danger
 
-You created new secret key material.  You must backup this data.  Failure to backup this data could result in loss of funds.  See [Backup](/validator/setup/backup) for detailed instructions.
+You created new secret key material.  You must backup this data.  Failure to backup this data could result in loss of funds.  See [Backup your secret data](backup) for detailed instructions.
 
 :::
 

@@ -3,7 +3,7 @@
 Set up your Polygon Mumbai Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 4-8+ core CPU , 16-32GB RAM, 100GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - Build-essential packages
@@ -129,7 +129,7 @@ Open the `~/node/bor/start.sh` and add the following flag to start parameters:
 
 :::info
 
-Syncing Heimdall and Bor services can take several days to fully sync. Alternatively, you can use snapshots which will reduce the sync time to few hours. If you wish to sync the node from start, then you can skip this step and proceed with [starting the Polygon services](validator-zone/external-chains/polygon?id=start-the-polygon-services).
+Syncing Heimdall and Bor services can take several days to fully sync. Alternatively, you can use snapshots which will reduce the sync time to few hours. If you wish to sync the node from start, then you can skip this step.
 
 :::
 

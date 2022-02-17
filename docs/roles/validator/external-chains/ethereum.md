@@ -3,7 +3,7 @@
 Set up your Ethereum Ropsten Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: CPU with 2+ cores, 4GB RAM, 200GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - [Official Documentation](https://geth.ethereum.org/docs/getting-started)

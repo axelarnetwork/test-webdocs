@@ -11,7 +11,7 @@ When asking for help, communicate your setup and the problem succinctly but thor
 ```bash
 curl localhost:26657/status | jq '.result.sync_info'
 ```
-- Make sure you're running the correct versions of software, check [here](/resources/testnet-releases.md) for the latest software releases and addresses
+- Make sure you're running the correct versions of software, check [here](/releases/testnet) for the latest software releases and addresses
 
 ## Other interesting info that will help troubleshooting: 
 

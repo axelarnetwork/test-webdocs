@@ -10,10 +10,6 @@ The Axelar network is under active development.  Use at your own risk with funds
 
 :::
 
-## Prerequisites
-- Complete all steps from [Node Setup](/setup/)
-- Attempted or completed some exercises and have a basic understanding of the asset transfer workflow
-
 ## Commands
 This document lists out additional commands that can be run at different points during the exercises. The commands are not neccesary to complete the asset transfer, but display additional information about the current network state, and can be useful for debugging or learning more about the network.
 

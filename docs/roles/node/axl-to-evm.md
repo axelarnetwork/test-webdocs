@@ -11,21 +11,21 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - Skill level: intermediate
-- You have downloaded the Axelar blockchain and are comfortable with basic node management as per [Setup instructions](/parent-pages/setup.md).
+- You have downloaded the Axelar blockchain and are comfortable with [Basic node management](basic).
 - Your Axelar node has an account named `validator` that you control.  Let `{VALIDATOR_ADDR}` denote the address of your `validator` account.
 - Select an EVM chain `{EVM_CHAIN}` from: Ethereum, Avalanche, Fantom, Moonbeam, Polygon.
-- Complete steps from [Metamask for EVM chains](/resources/metamask.md) to connect your Metamask to `{EVM_CHAIN}`.
+- Complete steps from [Metamask for EVM chains](../user/metamask) to connect your Metamask to `{EVM_CHAIN}`.
 - You need both AXL tokens and `{EVM_CHAIN}` tokens to pay transaction fees.
     - **Testnet:**
-        - Get some `{EVM_CHAIN}` testnet tokens as per [Metamask for EVM chains](/resources/metamask.md).
+        - Get some `{EVM_CHAIN}` testnet tokens as per [Metamask for EVM chains](../user/metamask).
         - Get some AXL testnet tokens from the [Axelar testnet faucet](http://faucet.testnet.axelar.dev/).
     - **Mainnet:** You are responsible for obtaining your own tokens.
 - `{EVM_DEST_ADDR}` is an address controlled by you on the external EVM chain `{EVM_CHAIN}`.  (In your Metamask, for example.)  This is where your AXL tokens will be sent.
-- `{AMOUNT}` is the amount of AXL tokens you wish to transfer, denominated in `uaxl`.  Recall that `1 AXL = 1000000 uaxl`.  See [Testnet releases](/resources/testnet-releases.md) or [Mainnet releases](/resources/mainnet-releases.md) for minimum transfer amounts.
+- `{AMOUNT}` is the amount of AXL tokens you wish to transfer, denominated in `uaxl`.  Recall that `1 AXL = 1000000 uaxl`.  See [Testnet releases](/releases/testnet) or [Mainnet releases](/releases/mainnet) for minimum transfer amounts.
 
 ## Send AXL tokens from Axelar to an EVM chain
 
-Optional: Verify that your `validator` account has sufficient balance as per [Basic management of your Axelar node](/setup/basic.md).
+Optional: Verify that your `validator` account has sufficient balance as per [Basic node management](basic).
 
 Link your `{EVM_DEST_ADDR}` to a new temporary deposit address on Axelar:
 
@@ -72,7 +72,7 @@ echo my-secret-password | ~/.axelar/bin/axelard tx bank send validator {AXELAR_T
 
 Third-party monitoring tools will automatically complete the remaining steps of this process.
 
-Wait a few minutes then check your Metamask for the AXL tokens.  Don't forget to import the AXL token into Metamask so you can see your balance as described in [Metamask for EVM chains](/resources/metamask.md).
+Wait a few minutes then check your Metamask for the AXL tokens.  Don't forget to import the AXL token into Metamask so you can see your balance as described in [Metamask for EVM chains](../user/metamask).
 
 :::
 
@@ -120,7 +120,7 @@ successfully started signing batched commands with ID {BATCH_ID}
 
 :::note
 
-If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+If after performing the above steps you see the error `no commands to sign found` then check [this page](/reference/faq/ex5-problem) for detailed instructions on how to resolve it.
 
 :::
 
@@ -159,7 +159,7 @@ Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "S
 Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
 ### 1. Documentation
 
-[Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+[Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 ### 2. Terminal
 
 **Testnet:**

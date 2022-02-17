@@ -15,7 +15,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 
 :::tip
 
-These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Genesis sync](setup/join-genesis)
+These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Genesis sync](join-genesis)
 
 :::
 
@@ -248,5 +248,5 @@ Congratulations!  You joined the Axelar network and downloaded the blockchain.
 
 Learn what you can do with Axelar:
 
-* [Basic management of your Axelar node](/setup/basic)
+* [Basic node management](basic)
 * Tutorial: transfer UST or LUNA tokens from the Terra blockchain to EVM-compatible blockchains such as Avalanche, Ethereum, Fantom, Moonbeam, Polygon.

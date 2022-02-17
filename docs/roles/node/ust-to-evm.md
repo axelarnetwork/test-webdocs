@@ -10,7 +10,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - Skill level: intermediate
-- Prerequisites for [Send AXL to an EVM chain](/tutorials/axl-to-evm)
+- Prerequisites for [Send AXL to an EVM chain](axl-to-evm)
 
 ## Send UST tokens from Terra to an EVM chain
 
@@ -45,7 +45,7 @@ Use a web wallet such as Keplr.  See [Transfer Terra assets to EVM chains using 
 ### IBC from the terminal
 
 You need shell access to a Terra node with at least `{AMOUNT}` balance of UST tokens in an account called `terra-validator`.
-Get `{TERRA_TO_AXELAR_CHANNEL_ID}` from [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases) or [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+Get `{TERRA_TO_AXELAR_CHANNEL_ID}` from [Testnet resources](/releases/testnet) or [Mainnet resources](releases/mainnet).
 
 ```bash
 terrad tx ibc-transfer transfer transfer {TERRA_TO_AXELAR_CHANNEL_ID} {AXELAR_TEMP_ADDR} --packet-timeout-timestamp 0 --packet-timeout-height "0-20000" {AMOUNT}uusd --gas-prices 0.15uusd --from terra-validator -y -b block
@@ -59,7 +59,7 @@ Wait a few minutes for the IBC relayer to relay your transaction to Axelar.
 
 Third-party monitoring tools will automatically complete the remaining steps of this process.
 
-Wait a few minutes then check your Metamask for the UST tokens.  Don't forget to import the UST token into Metamask so you can see your balance as described in [Metamask for EVM chains](/resources/metamask.md).
+Wait a few minutes then check your Metamask for the UST tokens.  Don't forget to import the UST token into Metamask so you can see your balance as described in [Metamask for EVM chains](../user/metamask).
 
 :::
 
@@ -71,7 +71,7 @@ The remaining steps are needed only if there are no active third-party monitorin
 
 :::
 
-Verify the IBC transaction by checking the balances of `{AXELAR_TEMP_ADDR}` as per [Basic management of your Axelar node](/setup/basic.md).  Output should contain something like:
+Verify the IBC transaction by checking the balances of `{AXELAR_TEMP_ADDR}` as per [Basic node management](basic.md).  Output should contain something like:
 
 ```
 balances:
@@ -85,9 +85,9 @@ You will not see `UST`, `uusd` or a similar token denomination for `{IBC_DENOM}`
 
 :::
 
-Get `{IBC_DENOM}` from [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases) or [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+Get `{IBC_DENOM}` from [Testnet resources](/releases/testnet) or [Mainnet resources](/releases/mainnet).
 
-The remaining steps are similar to [Transfer AXL tokens from Axelar to an EVM chain using the terminal](/tutorials/axl-to-evm.md).
+The remaining steps are similar to [Transfer AXL tokens from Axelar to an EVM chain using the terminal](axl-to-evm).
 
 Confirm the deposit transaction.  Look for `{TX_HASH}` in the output of the previous command.
 
@@ -125,7 +125,7 @@ successfully started signing batched commands with ID {BATCH_ID}
 
 :::note
 
-If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+If after performing the above steps you see the error `no commands to sign found` then check [this page](/reference/faq/ex5-problem) for detailed instructions on how to resolve it.
 
 :::
 
@@ -166,7 +166,7 @@ Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "S
 Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
 ### 1. Documentation
 
-[Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+[Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 ### 2. Terminal
 
 **Testnet:**

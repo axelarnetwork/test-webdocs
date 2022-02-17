@@ -3,14 +3,14 @@
 Set up your Moonbeam (Moonbase-Alpha) Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 8+ cores CPU , 16GB+ RAM, 150GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - Rust (If you are compiling the binary manually)
 - [Official Documentation](https://docs.moonbeam.network/node-operators/networks/run-a-node/)
 
 ## Install required dependencies
-In order to compile the `moonbeam` binary by yourself, you first need to setup the required dependencies. In this guide we will be using The Release binary instead, so you can [skip](/validator/external-chains/moonbeam?id=install-moonbase-alpha) this step.
+In order to compile the `moonbeam` binary by yourself, you first need to setup the required dependencies. In this guide we will be using the release binary instead, so you can skip this step.
 
 ##### 1. Setup Rust
 

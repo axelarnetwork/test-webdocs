@@ -17,22 +17,22 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - **Hardware:** Minimum: 16 cores, 16GB RAM, 1.5 TB drive. Recommended: 32 cores, 32 GB RAM, 2 TB+ drive.
-- Downloaded the Axelar blockchain and be comfortable with basic node management as per [Setup instructions](/parent-pages/setup.md).
+- You have downloaded the Axelar blockchain and are comfortable with [Basic node management](../node/basic).
 - Your Axelar node has an account named `validator` that you control.  Let `{VALIDATOR_ADDR}` denote the address of your `validator` account.
-- Backup your `validator` secret mnemonic and your Tendermint consensus secret key as per [Join the Axelar network for the first time](/setup/join.md)
+- Backup your `validator` secret mnemonic and your Tendermint consensus secret key as per [Quick sync](../node/join)
 
 ## Steps to become a validator
 
-1. [Launch companion processes for the first time](/validator/setup/vald-tofnd.md)
-2. [Back-up your validator mnemonics and secret keys](/validator/setup/backup.md)
-3. [Register broadcaster proxy](/validator/setup/register-proxy.md)
-4. [Stake AXL tokens on the Axelar network](/validator/setup/stake-axl-tokens.md)
-5. [Health check](/validator/setup/health-check.md)
-6. [Set up external chains](/validator/external-chains/overview.md)
+1. [Launch companion processes for the first time](setup/vald-tofnd)
+2. [Back-up your validator mnemonics and secret keys](setup/backup)
+3. [Register broadcaster proxy](setup/register-broadcaster)
+4. [Stake AXL tokens on the Axelar network](setup/stake-axl)
+5. [Health check](health-check.md)
+6. [Set up external chains](external-chains)
 
 ## Other setup-related tasks
 
-* [Troubleshoot start-up](/validator/troubleshoot/troubleshoot.md)
-* [Recover validator from mnemonic or secret keys](/validator/troubleshoot/recovery.md)
-* [Leave as a validator](/validator/troubleshoot/leave.md)
-* [Missed too many blocks](/validator/troubleshoot/missed-too-many-blocks.md)
+* [Troubleshoot start-up](troubleshoot/startup)
+* [Recover validator from mnemonic or secret keys](troubleshoot/recovery)
+* [Leave as a validator](troubleshoot/leave)
+* [Missed too many blocks](troubleshoot/missed-too-many-blocks)

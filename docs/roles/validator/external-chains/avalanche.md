@@ -3,7 +3,7 @@
 Set up your Avalanche Fuji Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 8 AWS vCPU+, 16GB RAM, 100GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - [Official Documentation](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node)

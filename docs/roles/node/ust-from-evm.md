@@ -10,7 +10,7 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 - Skill level: intermediate
-- Prerequisites for [Send UST to an EVM chain](/tutorials/ust-to-evm)
+- Prerequisites for [Send UST to an EVM chain](ust-to-evm)
 - `{TERRA_DEST_ADDR}` is an address controlled by you on the Terra chain.  This is where your UST tokens will be redeemed.
 
 ## Redeem UST tokens from an EVM chain
@@ -57,7 +57,7 @@ The remaining steps are needed only if there are no active third-party monitorin
 
 :::
 
-Do not proceed to the next step until you have waited for sufficiently many block confirmations on the EVM chain.  Block confirmation minimums can be found at [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+Do not proceed to the next step until you have waited for sufficiently many block confirmations on the EVM chain.  Block confirmation minimums can be found at [Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 
 Confirm the EVM chain transaction on Axelar.
 
@@ -97,7 +97,7 @@ successfully started signing batched commands with ID {BATCH_ID}
 
 :::note
 
-If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+If after performing the above steps you see the error `no commands to sign found` then check [this page](/reference/faq/ex5-problem) for detailed instructions on how to resolve it.
 
 :::
 
@@ -136,7 +136,7 @@ Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "S
 Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
 ### 1. Documentation
 
-[Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+[Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 ### 2. Terminal
 
 **Testnet:**
