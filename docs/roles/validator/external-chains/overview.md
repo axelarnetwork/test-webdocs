@@ -79,9 +79,17 @@ Substitute your Ethereum RPC address for `my_ethereum_host`.  Be sure to set `st
 
 ## Restart your companion processes
 
-!> Do not stop the `axelar-core` process.  If you stop `axelar-core` then you risk downtime for Tendermint consensus, which can result in penalties.
+:::caution
 
-!> If `vald`, `tofnd` are stopped for too long then your validator might fail to produce a heartbeat transaction when needed.  The risk of this event can be reduced to near-zero if you promptly restart these processes shortly after a recent round of heartbeat transactions.
+Do not stop the `axelar-core` process.  If you stop `axelar-core` then you risk downtime for Tendermint consensus, which can result in penalties.
+
+:::
+
+:::caution
+
+If `vald`, `tofnd` are stopped for too long then your validator might fail to produce a heartbeat transaction when needed.  The risk of this event can be reduced to near-zero if you promptly restart these processes shortly after a recent round of heartbeat transactions.
+
+:::
 
 :::tip
 

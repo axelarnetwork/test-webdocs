@@ -38,7 +38,11 @@ Next, query your validator address with
 docker exec axelar-core axelard keys show validator --bech val -a
 ```
 
-!> Make sure the validator address that is returned starts with `axelarvaloper`
+:::note
+
+Verify that the returned validator address starts with `axelarvaloper`
+
+:::
 
 Now, start `vald`, providing the IP address and validator address:
 

@@ -1,8 +1,4 @@
 # Set up your Fantom Opera node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
-
 
 ## Prerequisites
 - Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
@@ -11,7 +7,6 @@
 - Build-essential packages
 - Golang
 - [Official Documentation](https://docs.fantom.foundation/staking/run-a-read-only-node)
-
 
 ## Install required dependencies
 In order to build the `go-opera`, you first need to install all of the required dependencies.

@@ -1,7 +1,7 @@
-# [TODO: revise] Recover validator from mnemonic or secret keys
-------------
+# Recover validator from mnemonic or secret keys
 
-# TODO: build tofnd from source?
+[TODO revise]
+## TODO: build tofnd from source?
 
 [TODO: new section on building tofnd?]
 ```
@@ -130,4 +130,8 @@ If you are running a tofnd binary, follow the steps below:
 
 Tofnd has now re-created the private key that is derived from your mnemonic into tofnd's internal database, fetched your shares from the blockchain, decrypted them using your private key, and finally stored them at its internal tofnd database. Once recoverred, can remove your mnemonic file you used, as it is no longer needed.
 
-!> :fire: **Attention**: Remember to still keep your mnemonic stored at an offline, secure place for future recoveries.
+:::danger
+
+Remember to still keep your mnemonic stored at an offline, secure place for future recoveries.
+
+:::

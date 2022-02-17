@@ -3,12 +3,16 @@ slug: /roles/validator/setup
 ---
 
 # Overview
------------
+
 An Axelar network validator participates in block creation, multi-party cryptography protocols, and voting.
 
 Convert your existing Axelar node into a validator by staking AXL tokens and attaching external EVM-compatible blockchains.
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+:::danger
+
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+
+:::
 
 ## Prerequisites
 

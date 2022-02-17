@@ -1,6 +1,10 @@
 # Back-up your validator mnemonics and secret keys
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+:::danger
+
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+
+:::
 
 You must store backup copies of the following data in a safe place:
 

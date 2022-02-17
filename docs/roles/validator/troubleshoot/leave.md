@@ -1,8 +1,6 @@
 # Leaving the Network as a Validator
------------
 
-
-!> :fire: TODO 2 metrics: consensus bonded/active and tss bonded/active.
+[TODO 2 metrics: consensus bonded/active and tss bonded/active.]
 
 1. Deactivate your broadcaster account.
 ```bash
