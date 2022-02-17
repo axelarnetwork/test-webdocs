@@ -89,6 +89,16 @@ const sidebars = {
         'roles/dev',
       ],
     },
+    {
+      type: 'category',
+      label: 'Releases',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'releases/mainnet',
+        'releases/testnet',
+      ],
+    },
   ],
 };
 
