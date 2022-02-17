@@ -1,5 +1,10 @@
 # Join the Axelar network for the first time (quick sync)
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Start your Axelar node and download the blockchain.
 
 !> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
@@ -27,7 +32,7 @@ In what follows you will execute a shell script to join the Axelar testnet.  You
 
 !> In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
 
-## Join the Axelar testnet
+## Join the Axelar network
 
 Clone the [`axelerate-community`](https://github.com/axelarnetwork/axelarate-community) repo:
 
@@ -36,24 +41,27 @@ git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
 ```
 
-Launch a new Axelar testnet node with version `0.13.6` of axelar-core:
-
-**Testnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.13.6 -n testnet
-```
-
+<Tabs>
+<TabItem value="Mainnet" label="Mainnet" default>
 Launch a new Axelar mainnet node with version `0.10.7` of axelar-core:
 
-**Mainnet:**
 ```bash
 KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.10.7 -n mainnet
 ```
 
-Your Axelar node will initialize your data folder
+Your Axelar node will initialize your data folder `~/.axelar`
+</TabItem>
 
-* **Testnet:** `~/.axelar_testnet`
-* **Mainnet:** `~/.axelar`
+<TabItem value="Testnet" label="Testnet">
+Launch a new Axelar testnet node with version `0.13.6` of axelar-core:
+
+```bash
+KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.13.6
+```
+
+Your Axelar node will initialize your data folder `~/.axelar_testnet`
+</TabItem>
+</Tabs>
 
 Then your Axelar node will begin downloading blocks in the blockchain one-by-one.
 
