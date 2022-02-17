@@ -41,8 +41,8 @@ git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
 ```
 
-<Tabs>
-<TabItem value="Mainnet" label="Mainnet" default>
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
 Launch a new Axelar mainnet node with version `0.10.7` of axelar-core:
 
 ```bash
@@ -52,7 +52,7 @@ KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.10.7 -n mainnet
 Your Axelar node will initialize your data folder `~/.axelar`
 </TabItem>
 
-<TabItem value="Testnet" label="Testnet">
+<TabItem value="testnet" label="Testnet">
 Launch a new Axelar testnet node with version `0.13.6` of axelar-core:
 
 ```bash
@@ -69,27 +69,43 @@ Then your Axelar node will begin downloading blocks in the blockchain one-by-one
 
 BACKUP and DELETE the `validator` account secret mnemonic:
 
-**Testnet:**
-```
-~/.axelar_testnet/validator.txt
-```
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```
 ~/.axelar/validator.txt
 ```
 
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
+```
+~/.axelar_testnet/validator.txt
+```
+
+</TabItem>
+</Tabs>
+
 BACKUP but do NOT DELETE the Tendermint consensus secret key (this is needed on node restarts):
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```
+~/.axelar/.core/config/priv_validator_key.json
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```
 ~/.axelar_testnet/.core/config/priv_validator_key.json
 ```
 
-**Mainnet:**
-```
-~/.axelar/.core/config/priv_validator_key.json
-```
+</TabItem>
+</Tabs>
 
 ## View logs
 
