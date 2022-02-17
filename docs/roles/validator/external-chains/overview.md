@@ -1,5 +1,8 @@
+---
+slug: /roles/validator/external-chains
+---
+
 # Overview
------------
 
 As a validator for the Axelar network, your Axelar node will vote on the status of external blockchains such as Ethereum, Cosmos, etc. Specifically:
 
