@@ -43,6 +43,7 @@ const config = {
         logo: {
           alt: 'Axelar Docs',
           src: 'img/logo.png',
+          srcDark: 'img/logo-dark.png'
         },
         items: [
           // {
