@@ -62,11 +62,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Other',
             items: [
               {
-                label: 'Tutorial',
-                to: '/',
+                label: 'Bug bounty',
+                to: '/bug-bounty',
+              },
+              {
+                label: 'Terms of use',
+                to: '/terms-of-use',
               },
             ],
           },
@@ -79,7 +83,7 @@ const config = {
               },
               {
                 label: 'Github',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://github.com/axelarnetwork',
               },
               {
                 label: 'Blog',
