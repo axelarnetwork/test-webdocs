@@ -107,6 +107,22 @@ const sidebars = {
       items: [
         'reference/extra-commands',
         'reference/useful-links',
+        {
+          type: 'category',
+          label: 'Technical FAQ',
+          items: [
+            'reference/faq/help',
+            'reference/faq/problem1',
+            'reference/faq/problem2',
+            'reference/faq/problem3',
+            'reference/faq/problem4',
+            'reference/faq/problem5',
+            'reference/faq/problem6',
+            'reference/faq/problem7',
+            'reference/faq/problem8',
+            'reference/faq/ex5-problem',
+          ],
+        },
       ],
     },
   ],
