@@ -12,9 +12,9 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'Axelar', // Usually your GitHub org/user name.
-  projectName: 'Axelar Docs', // Usually your repo name.
+  // favicon: 'img/favicon.ico',
+  // organizationName: 'axelarnetwork', // Usually your GitHub org/user name.
+  // projectName: 'axelar-core', // Usually your repo name.
 
   presets: [
     [
