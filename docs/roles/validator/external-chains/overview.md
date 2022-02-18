@@ -4,6 +4,11 @@ slug: /roles/validator/external-chains
 
 # Overview
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 As a validator for the Axelar network, your Axelar node will vote on the status of external blockchains such as Ethereum, Cosmos, etc. Specifically:
 
 1. Select which external chains your Axelar node will support.  Set up and configure your own nodes for the chains you selected.
@@ -106,15 +111,22 @@ kill -9 $(pgrep -f "axelard vald-start")
 
 Immediately resume your companion processes `vald`, `tofnd`:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh -n mainnet
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh
 ```
 
-**Mainnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh -n mainnet
-```
+</TabItem>
+</Tabs>
 
 ## Check your connections to new chains in vald
 
@@ -141,12 +153,19 @@ You only need to register as a chain maintainer once.  If you've already done it
 
 Example: multiple EVM chains in one command:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-dojo-1 --home ~/.axelar/.vald --gas auto --gas-adjustment 1.5
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.vald --gas auto --gas-adjustment 1.5
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-dojo-1 --home ~/.axelar/.vald --gas auto --gas-adjustment 1.5
-```
+</TabItem>
+</Tabs>

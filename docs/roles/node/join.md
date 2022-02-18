@@ -32,7 +32,7 @@ These instructions syncronize your Axelar node quickly by downloading a recent s
 
 Your Axelar keyring is encrypted with a password you choose.  Your password must have at least 8 characters.
 
-In what follows you will execute a shell script to join the Axelar testnet.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
+In what follows you will execute a shell script to join the Axelar network.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
 
 :::caution
 
@@ -76,7 +76,7 @@ Then your Axelar node will begin downloading blocks in the blockchain one-by-one
 
 BACKUP and DELETE the `validator` account secret mnemonic:
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```
@@ -96,7 +96,7 @@ BACKUP and DELETE the `validator` account secret mnemonic:
 
 BACKUP but do NOT DELETE the Tendermint consensus secret key (this is needed on node restarts):
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```
@@ -120,7 +120,7 @@ View the streaming logs for your Axelar node:
 
 In a new terminal window:
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```bash
@@ -152,7 +152,7 @@ kill -9 $(pgrep -f "axelard start")
 
 Delete your `data` directory:
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```bash
@@ -186,7 +186,7 @@ Let `{SNAPSHOT_FILE}` denote the file name of the snapshot you downloaded.  Exam
 
 Decompress the downloaded snapshot into your `data` directory:
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```bash
@@ -208,7 +208,7 @@ lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar_testnet/.core
 
 Resume your Axelar node with the latest version of axelar-core:
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='hidden'>
 <TabItem value="mainnet" label="Mainnet" default>
 
 ```bash

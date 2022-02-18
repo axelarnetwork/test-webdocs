@@ -1,5 +1,10 @@
 # Launch companion processes
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Launch validator companion processes for the first time.
 
 Axelar validators need two companion processes called `vald` and `tofnd`.
@@ -20,15 +25,22 @@ In the following instructions you must substitute your chosen keyring and `tofnd
 
 Launch `vald`, `tofnd` for the first time:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh -n mainnet
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh
 ```
 
-**Mainnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh -n mainnet
-```
+</TabItem>
+</Tabs>
 
 :::danger
 
@@ -40,14 +52,21 @@ You created new secret key material.  You must backup this data.  Failure to bac
 
 View the streaming logs for `vald`, `tofnd`:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+tail -f ~/.axelar/logs/vald.log
+tail -f ~/.axelar/logs/tofnd.log
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 tail -f ~/.axelar_testnet/logs/vald.log
 tail -f ~/.axelar_testnet/logs/tofnd.log
 ```
 
-**Mainnet:**
-```bash
-tail -f ~/.axelar/logs/vald.log
-tail -f ~/.axelar/logs/tofnd.log
-```
+</TabItem>
+</Tabs>

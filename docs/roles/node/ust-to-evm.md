@@ -1,5 +1,10 @@
 # Send UST to an EVM chain
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Transfer UST tokens from Terra to an EVM chain using the terminal.
 
 :::danger
@@ -12,19 +17,33 @@ The Axelar network is under active development.  Use at your own risk with funds
 - Skill level: intermediate
 - Prerequisites for [Send AXL to an EVM chain](axl-to-evm)
 
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+</TabItem>
+</Tabs>
+
 ## Send UST tokens from Terra to an EVM chain
 
 Link your `{EVM_DEST_ADDR}` to a new temporary deposit address on Axelar:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard tx axelarnet link {EVM_CHAIN} {EVM_DEST_ADDR} uusd --from validator --gas auto --gas-adjustment 1.5 --chain-id axelar-dojo-1 --home ~/.axelar/.core
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx axelarnet link {EVM_CHAIN} {EVM_DEST_ADDR} uusd --from validator --gas auto --gas-adjustment 1.5 --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard tx axelarnet link {EVM_CHAIN} {EVM_DEST_ADDR} uusd --from validator --gas auto --gas-adjustment 1.5 --chain-id axelar-dojo-1 --home ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 Output should contain
 ```
@@ -91,31 +110,45 @@ The remaining steps are similar to [Transfer AXL tokens from Axelar to an EVM ch
 
 Confirm the deposit transaction.  Look for `{TX_HASH}` in the output of the previous command.
 
-**Testnet:**
-```bash
-echo my-secret-password | ~/.axelar_testnet/bin/axelard tx axelarnet confirm-deposit {TX_HASH} {AMOUNT}"{IBC_DENOM}" {AXELAR_TEMP_ADDR} --from validator --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
-```
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```bash
 echo my-secret-password | ~/.axelar/bin/axelard tx axelarnet confirm-deposit {TX_HASH} {AMOUNT}"{IBC_DENOM}" {AXELAR_TEMP_ADDR} --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core
 ```
 
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```bash
+echo my-secret-password | ~/.axelar_testnet/bin/axelard tx axelarnet confirm-deposit {TX_HASH} {AMOUNT}"{IBC_DENOM}" {AXELAR_TEMP_ADDR} --from validator --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
+```
+
+</TabItem>
+</Tabs>
+
 Create and sign pending transfers for `{EVM_CHAIN}`.
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard tx evm create-pending-transfers {EVM_CHAIN} --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core --gas auto --gas-adjustment 1.5
+
+echo my-secret-password | ~/.axelar/bin/axelard tx evm sign-commands {EVM_CHAIN} --from validator --gas auto --gas-adjustment 1.2 --chain-id axelar-dojo-1 --home ~/.axelar/.core
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx evm create-pending-transfers {EVM_CHAIN} --from validator --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core --gas auto --gas-adjustment 1.5
 
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx evm sign-commands {EVM_CHAIN} --from validator --gas auto --gas-adjustment 1.2 --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard tx evm create-pending-transfers {EVM_CHAIN} --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core --gas auto --gas-adjustment 1.5
-
-echo my-secret-password | ~/.axelar/bin/axelard tx evm sign-commands {EVM_CHAIN} --from validator --gas auto --gas-adjustment 1.2 --chain-id axelar-dojo-1 --home ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 Output should contain
 
@@ -131,15 +164,22 @@ If after performing the above steps you see the error `no commands to sign found
 
 Get the `execute_data`:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+~/.axelar/bin/axelard q evm batched-commands {EVM_CHAIN} {BATCH_ID}
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 ~/.axelar_testnet/bin/axelard q evm batched-commands {EVM_CHAIN} {BATCH_ID}
 ```
 
-**Mainnet:**
-```bash
-~/.axelar/bin/axelard q evm batched-commands {EVM_CHAIN} {BATCH_ID}
-```
+</TabItem>
+</Tabs>
 
 Wait for `status: BATCHED_COMMANDS_STATUS_SIGNED` and copy the `execute_data`.
 
@@ -169,15 +209,22 @@ Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
 [Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 ### 2. Terminal
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 ~/.axelar_testnet/bin/axelard q evm gateway-address {EVM_CHAIN}
 ```
 
-**Mainnet:**
-```bash
-~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
-```
+</TabItem>
+</Tabs>
 
 :::
 
