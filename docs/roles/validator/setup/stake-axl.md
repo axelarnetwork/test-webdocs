@@ -1,5 +1,6 @@
-# Stake AXL tokens on the Axelar network
------------
+# Stake AXL tokens
+
+Stake AXL tokens on the Axelar network.
 
 Choose an amount `{STAKE_AMOUNT}` of AXL tokens you wish to stake.  `{STAKE_AMOUNT}` is denominated in `uaxl` where `1 AXL = 1000000 uaxl`.
 

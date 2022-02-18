@@ -10,11 +10,11 @@ const config = {
   tagline: 'Connecting Web3',
   url: 'https://docs.axelar.dev/',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'Axelar', // Usually your GitHub org/user name.
-  projectName: 'Axelar Docs', // Usually your repo name.
+  favicon: 'img/favicon/favicon-32x32.png',
+  // organizationName: 'axelarnetwork', // Usually your GitHub org/user name.
+  // projectName: 'axelar-core', // Usually your repo name.
 
   presets: [
     [
@@ -43,19 +43,20 @@ const config = {
         logo: {
           alt: 'Axelar Docs',
           src: 'img/logo.png',
+          srcDark: 'img/logo-dark.png'
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {

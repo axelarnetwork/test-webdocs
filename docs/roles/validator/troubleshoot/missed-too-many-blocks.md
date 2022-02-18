@@ -1,7 +1,6 @@
-# Health check says "missed too many blocks"
--------------
+# "Missed too many blocks" status
 
-If your validator misses 6 or more of the last 100 blocks then your Axelar status becomes `missed_too_many_blocks` and your [health check](/validator/setup/health-check) prints something like:
+If your validator misses 6 or more of the last 100 blocks then your Axelar status becomes `missed_too_many_blocks` and your [health check](../setup/health-check) prints something like:
 
 ```yaml
 tofnd check: passed
@@ -11,5 +10,8 @@ operator check: failed (health check to operator MY_VALIDATOR_ADDRESS failed due
 
 You can restore your validator to healthy status simply by waiting --- `missed_too_many_blocks` is dropped automatically as soon as 100 blocks have passed in which you've missed 5 or fewer blocks.
 
+:::tip
 
-> If you missed 50 or more of the last 100 blocks then your validator status becomes `jailed`.  In this case, see [Unjail](/validator/troubleshoot/unjail) for instructions on how to restore your validator to healthy status.
+If you missed 50 or more of the last 100 blocks then your validator status becomes `jailed`.  In this case, see [Unjail](../troubleshoot/unjail) for instructions on how to restore your validator to healthy status.
+
+:::

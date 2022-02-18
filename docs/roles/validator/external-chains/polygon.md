@@ -1,17 +1,14 @@
-# Set up your Polygon Mumbai Testnet node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
+# Polygon
 
+Set up your Polygon Mumbai Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 4-8+ core CPU , 16-32GB RAM, 100GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - Build-essential packages
 - Golang 1.17+
 - [Official Documentation](https://docs.polygon.technology/docs/integrate/full-node-binaries)
-
 
 ## Install required dependencies
 In order to build the `go-opera`, you first need to install all of the required dependencies.
@@ -130,7 +127,11 @@ Open the `~/node/bor/start.sh` and add the following flag to start parameters:
 
 ##### 5. Download maintained snapshots
 
-!> Syncing Heimdall and Bor services can take several days to fully sync. Alternatively, you can use snapshots which will reduce the sync time to few hours. If you wish to sync the node from start, then you can skip this step and proceed with [starting the Polygon services](validator-zone/external-chains/polygon?id=start-the-polygon-services).
+:::info
+
+Syncing Heimdall and Bor services can take several days to fully sync. Alternatively, you can use snapshots which will reduce the sync time to few hours. If you wish to sync the node from start, then you can skip this step.
+
+:::
 
 In order to use the snapshots, please visit [Polygon Chains Snapshots](https://snapshots.matic.today/) and download the latest available snapshots fot Heimdall and Bor. In this guide we are using:
 
@@ -151,7 +152,11 @@ sudo service heimdalld start
 sudo service heimdalld-rest-server start
 ```
 
-!>  Important: You need to wait for Heimdall node to fully sync with the network before starting the Bor service!
+:::caution
+
+Important: You need to wait for Heimdall node to fully sync with the network before starting the Bor service!
+
+:::
 
 You can check the status of `heimdalld` service or follow the logs with:
 ```bash

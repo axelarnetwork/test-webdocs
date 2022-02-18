@@ -1,11 +1,16 @@
-# Redeem UST tokens from an EVM chain to Terra using the terminal
+# Redeem UST from an EVM chain
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+Redeem UST tokens from an EVM chain to Terra using the terminal.
 
+:::danger
+
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+
+:::
 ## Prerequisites
 
 - Skill level: intermediate
-- Prerequisites for [Transfer UST tokens from Terra to an EVM chain using the terminal](/tutorials/ust-to-evm)
+- Prerequisites for [Send UST to an EVM chain](ust-to-evm)
 - `{TERRA_DEST_ADDR}` is an address controlled by you on the Terra chain.  This is where your UST tokens will be redeemed.
 
 ## Redeem UST tokens from an EVM chain
@@ -30,18 +35,29 @@ successfully linked {EVM_TEMP_ADDR} and {TERRA_DEST_ADDR}
 
 Use Metamask to send some wrapped AXL tokens on `{EVM_CHAIN}` to the new temporary deposit address `{EVM_TEMP_ADDR}`.  Save the transaction hash `{EVM_TX_HASH}` for later.
 
-!> :fire: Send only `Axelar Wrapped UST` ERC20 tokens to `{EVM_TEMP_ADDR}`.  Any other token sent to `{EVM_TEMP_ADDR}` will be lost.
+:::danger
 
-> [!NOTE]
-> Third-party monitoring tools will automatically complete the remaining steps of this process.
->
-> Wait a few minutes then check your Terra `{TERRA_DEST_ADDR}` account UST token balance.
+Send only `Axelar Wrapped UST` ERC20 tokens to `{EVM_TEMP_ADDR}`.  Any other token sent to `{EVM_TEMP_ADDR}` will be lost.
 
-!> If you attempt the remaining steps while third-party monitoring tools are active then your commands are likely to conflict with third-party commands.  In this case you are likely to observe errors.  Deeper investigation might be needed to resolve conflicts and complete the transfer.
-!>
-!> The remaining steps are needed only if there are no active third-party monitoring tools and you wish to complete the process manually.
+:::
 
-Do not proceed to the next step until you have waited for sufficiently many block confirmations on the EVM chain.  Block confirmation minimums can be found at [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
+:::note
+
+Third-party monitoring tools will automatically complete the remaining steps of this process.
+
+Wait a few minutes then check your Terra `{TERRA_DEST_ADDR}` account UST token balance.
+
+:::
+
+:::caution
+
+If you attempt the remaining steps while third-party monitoring tools are active then your commands are likely to conflict with third-party commands.  In this case you are likely to observe errors.  Deeper investigation might be needed to resolve conflicts and complete the transfer.
+
+The remaining steps are needed only if there are no active third-party monitoring tools and you wish to complete the process manually.
+
+:::
+
+Do not proceed to the next step until you have waited for sufficiently many block confirmations on the EVM chain.  Block confirmation minimums can be found at [Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
 
 Confirm the EVM chain transaction on Axelar.
 
@@ -79,9 +95,11 @@ Output should contain
 successfully started signing batched commands with ID {BATCH_ID}
 ```
 
-> [!NOTE|label:Troubleshoot]
-> If after performing the above steps you see the error `no commands to sign found` then check [this page](/faqs/ex5-problem.md) for detailed instructions on how to resolve it.
+:::note
 
+If after performing the above steps you see the error `no commands to sign found` then check [this page](/reference/faq/ex5-problem) for detailed instructions on how to resolve it.
+
+:::
 
 Get the `execute_data`:
 
@@ -99,28 +117,39 @@ Wait for `status: BATCHED_COMMANDS_STATUS_SIGNED` and copy the `execute_data`.
 
 Use Metamask to send a transaction on `{EVM_CHAIN}` with the `execute_data` to the Axelar gateway contract address `{GATEWAY_ADDR}`.
 
-!> Post your transaction to the correct chain!  Set your Metamask network to `{EVM_CHAIN}`.  
+:::danger
 
-!> Manually increase the gas limit to 5 million gas (5000000).  If you don't do this then the transaction will fail due to insufficient gas and you will not receive your tokens.
-!>
-!> Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "Save"
+Post your transaction to the correct chain!  Set your Metamask network to `{EVM_CHAIN}`.  
 
-> [!TIP]
-> Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
->
-> ### 1. Documentation
-> [Testnet resources](https://docs.axelar.dev/#/resources/testnet-releases), [Mainnet resources](https://docs.axelar.dev/#/resources/mainnet-releases).
->
-> ### 2. Terminal
-> **Testnet:**
-> ```bash
-> ~/.axelar_testnet/bin/axelard q evm gateway-address {EVM_CHAIN}
-> ```
-> 
-> **Mainnet:**
-> ```bash
-> ~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
-> ```
+:::
+
+:::caution
+
+Manually increase the gas limit to 5 million gas (5000000).  If you don't do this then the transaction will fail due to insufficient gas and you will not receive your tokens.
+
+Before you click "confirm": select "EDIT", change "Gas Limit" to 5000000, and "Save"
+
+:::
+
+:::tip
+
+Learn the Axelar `{GATEWAY_ADDR}` for `{EVM_CHAIN}` in two ways:
+### 1. Documentation
+
+[Testnet resources](/releases/testnet), [Mainnet resources](/releases/mainnet).
+### 2. Terminal
+
+**Testnet:**
+```bash
+~/.axelar_testnet/bin/axelard q evm gateway-address {EVM_CHAIN}
+```
+
+**Mainnet:**
+```bash
+~/.axelar/bin/axelard q evm gateway-address {EVM_CHAIN}
+```
+
+:::
 
 To send a transaction to `{GATEWAY_ADDR}` using Metamask: paste hex from `execute_data` above into "Hex Data" field.  (Do not send tokens!)
 

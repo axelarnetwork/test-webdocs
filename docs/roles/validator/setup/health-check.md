@@ -1,5 +1,4 @@
 # Health check
------
 
 Check the status of your validator.
 
@@ -27,7 +26,10 @@ broadcaster check: passed
 operator check: passed
 ```
 
-> [!TIP] 
-> If you do `axelard health-check` within 50 blocks after first becoming a validator then your validator will not yet post a `heartbeat` transaction.
-> 
-> In this case, your heath check might return `stale_tss_heartbeat`.  Wait 50 blocks for your validator to automatically post a heartbeat transaction and then try `health-check` again.
+:::tip
+
+If you do `axelard health-check` within 50 blocks after first becoming a validator then your validator will not yet post a `heartbeat` transaction.
+
+In this case, your heath check might return `stale_tss_heartbeat`.  Wait 50 blocks for your validator to automatically post a heartbeat transaction and then try `health-check` again.
+
+:::

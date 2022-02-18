@@ -1,6 +1,12 @@
-# Back-up your validator mnemonics and secret keys
+# Back-up your secret data
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+Back-up your validator mnemonics and secret keys.
+
+:::danger
+
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+
+:::
 
 You must store backup copies of the following data in a safe place:
 
@@ -9,9 +15,9 @@ You must store backup copies of the following data in a safe place:
 3. `broadcaster` account secret mnemonic
 4. `tofnd` secret mnemonic
 
-Items 1 and 2 were created when you completed [Join the Axelar network for the first time](/setup/join.md).
+Items 1 and 2 were created when you completed [Quick sync](../../node/join).
 
-Items 3 and 4 were created when you completed [Launch validator companion processes for the first time](/validator/setup/vald-tofnd.md).
+Items 3 and 4 were created when you completed [Launch validator companion processes for the first time](vald-tofnd.md).
 
 ## Validator account secret mnemonic
 

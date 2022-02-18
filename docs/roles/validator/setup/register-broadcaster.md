@@ -1,9 +1,12 @@
 # Register broadcaster proxy
------------
 
 Axelar validators exchange messages with one another via the Axelar blockchain.  Each validator sends these messages from a separate `broadcaster` account.
 
-!> A validator can only register one `broadcaster` address throughout its lifetime.  This `broadcaster` address cannot be changed after it has been registered.  If you need to register a different proxy address then you must also create an entirely new validator.
+:::caution
+
+A validator can only register one `broadcaster` address throughout its lifetime.  This `broadcaster` address cannot be changed after it has been registered.  If you need to register a different proxy address then you must also create an entirely new validator.
+
+:::
 
 ## Learn your broadcaster account address
 
