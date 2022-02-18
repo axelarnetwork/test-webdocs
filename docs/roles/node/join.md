@@ -32,7 +32,7 @@ These instructions syncronize your Axelar node quickly by downloading a recent s
 
 Your Axelar keyring is encrypted with a password you choose.  Your password must have at least 8 characters.
 
-In what follows you will execute a shell script to join the Axelar testnet.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
+In what follows you will execute a shell script to join the Axelar network.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
 
 :::caution
 

@@ -1,5 +1,10 @@
 # Health check
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Check the status of your validator.
 
 * tofnd check: `tofnd` companion process is alive and accessible from `vald`.
@@ -8,15 +13,22 @@ Check the status of your validator.
 
 This step is not mandatory but it is good practice to help you detect and diagnose problems with your validator.
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar/.vald
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar_testnet/.vald
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar/.vald
-```
+</TabItem>
+</Tabs>
 
 You should see output like:
 

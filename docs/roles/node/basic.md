@@ -1,5 +1,10 @@
 # Basic node management
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 Stop your node, backup your chain data, resume your node.  Check your AXL balance, get AXL tokens from the faucet.
 
 :::danger
@@ -10,6 +15,13 @@ The Axelar network is under active development.  Use at your own risk with funds
 ## Prerequisites
 
 You have launched your Axelar node as per [Quick sync](join).  Perhaps you have not yet completed downloading the blockchain.
+
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+</TabItem>
+</Tabs>
 
 ## Stop your Axelar node
 
@@ -27,15 +39,22 @@ Your node must be stopped in order to properly backup chain data.
 
 :::
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+cp -r ~/.axelar ~/.axelar_mainnet_backup
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 cp -r ~/.axelar_testnet ~/.axelar_testnet_backup
 ```
 
-**Mainnet:**
-```bash
-cp -r ~/.axelar ~/.axelar_mainnet_backup
-```
+</TabItem>
+</Tabs>
 
 ## Resume your Axelar node
 
@@ -47,15 +66,22 @@ If your node is still in `catching_up` mode then you might need to use the `-a` 
 
 :::
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 KEYRING_PASSWORD=my-secret-password ./scripts/node.sh
 ```
 
-**Mainnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
-```
+</TabItem>
+</Tabs>
 
 ## Learn your address
 
@@ -67,15 +93,22 @@ A new account named `validator` was automatically created for you when you joine
 
 Learn the address of your `validator` account:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard keys show validator -a --home ~/.axelar/.core
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard keys show validator -a --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard keys show validator -a --home ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 ## Check your AXL balance
 
@@ -87,20 +120,35 @@ Your balance will appear only after you have downloaded the blockchain and exite
 
 :::
 
-**Testnet:**
-```bash
-echo my-secret-password | ~/.axelar_testnet/bin/axelard q bank balances {MY_ADDRESS} --home ~/.axelar_testnet/.core
-```
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```bash
 echo my-secret-password | ~/.axelar/bin/axelard q bank balances {MY_ADDRESS} --home ~/.axelar/.core
 ```
 
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```bash
+echo my-secret-password | ~/.axelar_testnet/bin/axelard q bank balances {MY_ADDRESS} --home ~/.axelar_testnet/.core
+```
+
+</TabItem>
+</Tabs>
+
 If this is a new account then you should see no token balances.
+
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+</TabItem>
+<TabItem value="testnet" label="Testnet">
 
 ## Get AXL tokens from the faucet
 
 Get free AXL testnet tokens sent to `{MY_ADDRESS}` from the [Axelar Testnet Faucet](https://faucet.testnet.axelar.dev/).
 
 Check your balance again to see the tokens you received from the faucet.
+
+</TabItem>
+</Tabs>
