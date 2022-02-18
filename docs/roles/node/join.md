@@ -48,7 +48,7 @@ git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
 ```
 
-<Tabs groupId="network">
+<Tabs groupId="network" className='visible'>
 <TabItem value="mainnet" label="Mainnet" default>
 Launch a new Axelar mainnet node with version `0.10.7` of axelar-core:
 
