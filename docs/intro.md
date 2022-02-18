@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Welcome
+# Axelar Documentation
 
 ```mdx-code-block
 import ThemedImage from '@theme/ThemedImage';
