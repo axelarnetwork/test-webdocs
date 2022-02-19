@@ -59,6 +59,7 @@ const sidebars = {
                 'roles/validator/setup/register-broadcaster',
                 'roles/validator/setup/stake-axl',
                 'roles/validator/setup/health-check',
+                'roles/validator/setup/validator-setup',
               ],
             },
             {
