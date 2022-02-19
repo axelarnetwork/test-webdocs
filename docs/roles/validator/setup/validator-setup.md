@@ -170,5 +170,6 @@ journalctl -u tofnd.service -f -n 100
 journalctl -u vald.service -f -n 100
 ```
 ## Todo
-1. add create validator command
-2. add register broadcaster command
+1. Add create validator command
+2. Add register broadcaster command
+3. Add doc tabs to have mainnet + testnet instructions
