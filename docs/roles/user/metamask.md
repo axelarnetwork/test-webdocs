@@ -39,7 +39,7 @@ Tokens transferred to an EVM chain using Axelar are not visible in Metamask unti
 2. View "Assets" and select "Import Tokens".
 3. Paste into "Token Contract Address" the ERC20 address for the token.  ("Token symbol" and "token decimal" should be fetched automatically.)
 
-Axelar token contract addresses for each `[chain]` can be found at [Testnet Releases](/resources/testnet-releases.md).
+Axelar token contract addresses for each `[chain]` can be found at [Testnet Releases](/releases/testnet).
 
 ## Enable hex data in transactions
 

@@ -1,5 +1,7 @@
 # /home/.axelar_testnet folder missing
 
+[TODO revise.  Delete?]
+
 ## Problem
 After running `join-testnet.sh`, the `/home/.axelar_testnet` folder is missing. (Or the folder contents are out of date and unresponsive to changes)
 

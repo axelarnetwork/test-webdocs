@@ -1,5 +1,11 @@
-# Stake AXL tokens on the Axelar network
------------
+# Stake AXL tokens
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+Stake AXL tokens on the Axelar network.
 
 Choose an amount `{STAKE_AMOUNT}` of AXL tokens you wish to stake.  `{STAKE_AMOUNT}` is denominated in `uaxl` where `1 AXL = 1000000 uaxl`.
 
@@ -11,15 +17,22 @@ Choose a moniker `{MY_MONIKER}` for your validator.  There are many other parame
 
 Make your `validator` account into an Axelar validator by staking AXL tokens:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```
+echo my-secret-password | ~/.axelar/bin/axelard tx staking create-validator --amount {STAKE_AMOUNT}uaxl --moniker "{MY_MONIKER}" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1" --pubkey="$(~/.axelar/bin/axelard tendermint show-validator --home ~/.axelar/.core)" --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx staking create-validator --amount {STAKE_AMOUNT}uaxl --moniker "{MY_MONIKER}" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1" --pubkey="$(~/.axelar_testnet/bin/axelard tendermint show-validator --home ~/.axelar_testnet/.core)" --from validator --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```
-echo my-secret-password | ~/.axelar/bin/axelard tx staking create-validator --amount {STAKE_AMOUNT}uaxl --moniker "{MY_MONIKER}" --commission-rate="0.10" --commission-max-rate="0.20" --commission-max-change-rate="0.01" --min-self-delegation="1" --pubkey="$(~/.axelar/bin/axelard tendermint show-validator --home ~/.axelar/.core)" --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 ## Optional: Learn your valoper address
 
@@ -27,36 +40,57 @@ echo my-secret-password | ~/.axelar/bin/axelard tx staking create-validator --am
 
 Learn the `{VALOPER_ADDR}` address associated with your `validator` account
 
-**Testnet:**
-```bash
-echo my-secret-password | ~/.axelar_testnet/bin/axelard keys show validator -a --bech val --home ~/.axelar_testnet/.core
-```
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```bash
 echo my-secret-password | ~/.axelar/bin/axelard keys show validator -a --bech val --home ~/.axelar/.core
 ```
 
-## Optional: check the stake amount delegated to your validator
+</TabItem>
+<TabItem value="testnet" label="Testnet">
 
-**Testnet:**
 ```bash
- ~/.axelar_testnet/bin/axelard q staking validator {VALOPER_ADDR} | grep tokens
+echo my-secret-password | ~/.axelar_testnet/bin/axelard keys show validator -a --bech val --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
+</TabItem>
+</Tabs>
+
+## Optional: check the stake amount delegated to your validator
+
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
 ```bash
  ~/.axelar/bin/axelard q staking validator {VALOPER_ADDR} | grep tokens
 ```
 
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```bash
+ ~/.axelar_testnet/bin/axelard q staking validator {VALOPER_ADDR} | grep tokens
+```
+
+</TabItem>
+</Tabs>
+
 ## Optional: delegate additional stake to your validator
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard tx staking delegate {VALOPER_ADDR} {STAKE_AMOUNT}uaxl --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx staking delegate {VALOPER_ADDR} {STAKE_AMOUNT}uaxl --from validator --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard tx staking delegate {VALOPER_ADDR} {STAKE_AMOUNT}uaxl --from validator --chain-id axelar-dojo-1 --home ~/.axelar/.core
-```
+</TabItem>
+</Tabs>

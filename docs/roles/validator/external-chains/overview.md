@@ -4,6 +4,11 @@ slug: /roles/validator/external-chains
 
 # Overview
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 As a validator for the Axelar network, your Axelar node will vote on the status of external blockchains such as Ethereum, Cosmos, etc. Specifically:
 
 1. Select which external chains your Axelar node will support.  Set up and configure your own nodes for the chains you selected.
@@ -12,11 +17,11 @@ As a validator for the Axelar network, your Axelar node will vote on the status 
 ## External chains you can support on Axelar
 
 * EVM-compatible chains
-    * [Avalanche](/validator/external-chains/avalanche) 
-    * [Ethereum](/validator/external-chains/ethereum)
-    * [Fantom](/validator/external-chains/fantom)
-    * [Moonbeam](/validator/external-chains/moonbeam)
-    * [Polygon](/validator/external-chains/polygon)
+    * [Avalanche](external-chains/avalanche) 
+    * [Ethereum](external-chains/ethereum)
+    * [Fantom](external-chains/fantom)
+    * [Moonbeam](external-chains/moonbeam)
+    * [Polygon](external-chains/polygon)
     
     
 * Cosmos chains
@@ -36,7 +41,7 @@ Your `config.toml` file should already contain a snippet like the following:
 # 3. 'rpc_addr'              # EVM RPC endpoint URL; chain maintainers set their own endpoint
 # 4. `start-with-bridge`     # `true` to support this chain
 #
-# see https://docs.axelar.dev/#/validator/external-chains/overview
+# see https://docs.axelar.dev/roles/validator/external-chains
 
 [[axelar_bridge_evm]]
 name = "Ethereum"
@@ -79,11 +84,23 @@ Substitute your Ethereum RPC address for `my_ethereum_host`.  Be sure to set `st
 
 ## Restart your companion processes
 
-!> Do not stop the `axelar-core` process.  If you stop `axelar-core` then you risk downtime for Tendermint consensus, which can result in penalties.
+:::caution
 
-!> If `vald`, `tofnd` are stopped for too long then your validator might fail to produce a heartbeat transaction when needed.  The risk of this event can be reduced to near-zero if you promptly restart these processes shortly after a recent round of heartbeat transactions.
+Do not stop the `axelar-core` process.  If you stop `axelar-core` then you risk downtime for Tendermint consensus, which can result in penalties.
 
-> [!TIP] Heartbeat events are emitted every 50 blocks.  Your validator typically responds to heartbeat events within 1-2 blocks.  It should be safe to restart `vald`, `tofnd` at block heights that are 5-10 mod 50.
+:::
+
+:::caution
+
+If `vald`, `tofnd` are stopped for too long then your validator might fail to produce a heartbeat transaction when needed.  The risk of this event can be reduced to near-zero if you promptly restart these processes shortly after a recent round of heartbeat transactions.
+
+:::
+
+:::tip
+
+Heartbeat events are emitted every 50 blocks.  Your validator typically responds to heartbeat events within 1-2 blocks.  It should be safe to restart `vald`, `tofnd` at block heights that are 5-10 mod 50.
+
+:::
 
 Stop your companion processes `vald`, `tofnd`.
 
@@ -94,19 +111,26 @@ kill -9 $(pgrep -f "axelard vald-start")
 
 Immediately resume your companion processes `vald`, `tofnd`:
 
-**Testnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh
-```
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```bash
 KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh -n mainnet
 ```
 
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```bash
+KEYRING_PASSWORD=my-secret-password TOFND_PASSWORD=my-tofnd-password ./scripts/validator-tools-host.sh
+```
+
+</TabItem>
+</Tabs>
+
 ## Check your connections to new chains in vald
 
-Check your `vald` logs to see that your validator node has successfully connected to the new EVM chains you added.  [[How to view logs.]](/validator/setup/vald-tofnd.md)
+Check your `vald` logs to see that your validator node has successfully connected to the new EVM chains you added.  [[How to view logs.]](setup/vald-tofnd)
 
 You should see something like:
 ```log
@@ -121,16 +145,27 @@ You should see something like:
 
 For each external blockchain you selected earlier you must inform the Axelar network of your intent to maintain that chain.  This is accomplished via the `register-chain-maintainer` command.
 
-> [!TIP] You only need to register as a chain maintainer once.  If you've already done it for chain C then you do not need to do it again for chain C.
+:::tip
+
+You only need to register as a chain maintainer once.  If you've already done it for chain C then you do not need to do it again for chain C.
+
+:::
 
 Example: multiple EVM chains in one command:
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-dojo-1 --home ~/.axelar/.vald --gas auto --gas-adjustment 1.5
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-testnet-lisbon-3 --home ~/.axelar_testnet/.vald --gas auto --gas-adjustment 1.5
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard tx nexus register-chain-maintainer avalanche ethereum fantom moonbeam polygon --from broadcaster --chain-id axelar-dojo-1 --home ~/.axelar/.vald --gas auto --gas-adjustment 1.5
-```
+</TabItem>
+</Tabs>

@@ -1,15 +1,12 @@
-# Set up your Ethereum Ropsten Testnet node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
+# Ethereum
 
+Set up your Ethereum Ropsten Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: CPU with 2+ cores, 4GB RAM, 200GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - [Official Documentation](https://geth.ethereum.org/docs/getting-started)
-
 
 ## Install Geth
 In this guide we will be installing `Geth` with the built-in launchpad PPAs (Personal Package Archives) on Ubuntu. If you are on different OS, please refer to the [official Documentation](https://geth.ethereum.org/docs/getting-started).
@@ -32,8 +29,11 @@ sudo apt-get install ethereum
 
 After installation of `go-ethereum`, we are now ready to start the `geth` process but in order to ensure it is running in the background and auto-restarts in case of a server failure, we will setup a service file with systemd.
 
-!> In the service file below you need to replace `$USER` and path to `geth`, depending on your system configuration.
+:::note
 
+In the service file below you need to replace `$USER` and path to `geth`, depending on your system configuration.
+
+:::
 
 ```bash
 sudo tee <<EOF >/dev/null /etc/systemd/system/geth.service

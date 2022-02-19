@@ -1,14 +1,23 @@
-# Join the Axelar network for the first time (quick sync)
+# Quick sync (recommended)
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 Start your Axelar node and download the blockchain.
 
-!> The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
+:::danger
 
-> [!TIP] These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Join the Axelar network for the first time (genesis sync)](setup/join-genesis.md)
+The Axelar network is under active development.  Use at your own risk with funds you're comfortable using.  See [Terms of use](/terms-of-use).
 
-> [!NOTE] Choose to run your Axelar node on either testnet or mainnet.
->
-> Look for **Testnet:** or **Mainnet:** for instructions specific to your chosen network.
+:::
+
+:::tip
+
+These instructions syncronize your Axelar node quickly by downloading a recent snapshot of the blockchain.  If instead you prefer to syncronize your Axelar node using the Axelar peer-to-peer network then see [Genesis sync](join-genesis)
+
+:::
 
 ## Prerequisites
 
@@ -23,11 +32,14 @@ Start your Axelar node and download the blockchain.
 
 Your Axelar keyring is encrypted with a password you choose.  Your password must have at least 8 characters.
 
-In what follows you will execute a shell script to join the Axelar testnet.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
+In what follows you will execute a shell script to join the Axelar network.  Your keyring password is supplied to the shell script via a `KEYRING_PASSWORD` environment variable.
 
-!> In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+:::caution
 
-## Join the Axelar testnet
+In the following instructions you must substitute your chosen keyring password for `my-secret-password`.
+
+:::
+## Join the Axelar network
 
 Clone the [`axelerate-community`](https://github.com/axelarnetwork/axelarate-community) repo:
 
@@ -36,24 +48,27 @@ git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
 ```
 
-Launch a new Axelar testnet node with version `0.13.6` of axelar-core:
-
-**Testnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.13.6 -n testnet
-```
-
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
 Launch a new Axelar mainnet node with version `0.10.7` of axelar-core:
 
-**Mainnet:**
 ```bash
 KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.10.7 -n mainnet
 ```
 
-Your Axelar node will initialize your data folder
+Your Axelar node will initialize your data folder `~/.axelar`
+</TabItem>
 
-* **Testnet:** `~/.axelar_testnet`
-* **Mainnet:** `~/.axelar`
+<TabItem value="testnet" label="Testnet">
+Launch a new Axelar testnet node with version `0.13.6` of axelar-core:
+
+```bash
+KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -a v0.13.6
+```
+
+Your Axelar node will initialize your data folder `~/.axelar_testnet`
+</TabItem>
+</Tabs>
 
 Then your Axelar node will begin downloading blocks in the blockchain one-by-one.
 
@@ -61,27 +76,43 @@ Then your Axelar node will begin downloading blocks in the blockchain one-by-one
 
 BACKUP and DELETE the `validator` account secret mnemonic:
 
-**Testnet:**
-```
-~/.axelar_testnet/validator.txt
-```
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
 
-**Mainnet:**
 ```
 ~/.axelar/validator.txt
 ```
 
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
+```
+~/.axelar_testnet/validator.txt
+```
+
+</TabItem>
+</Tabs>
+
 BACKUP but do NOT DELETE the Tendermint consensus secret key (this is needed on node restarts):
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```
+~/.axelar/.core/config/priv_validator_key.json
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```
 ~/.axelar_testnet/.core/config/priv_validator_key.json
 ```
 
-**Mainnet:**
-```
-~/.axelar/.core/config/priv_validator_key.json
-```
+</TabItem>
+</Tabs>
 
 ## View logs
 
@@ -89,15 +120,23 @@ View the streaming logs for your Axelar node:
 
 In a new terminal window:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+tail -f ~/.axelar/logs/axelard.log
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 tail -f ~/.axelar_testnet/logs/axelard.log
 ```
 
-**Mainnet:**
-```bash
-tail -f ~/.axelar/logs/axelard.log
-```
+</TabItem>
+</Tabs>
 
 You should see log messages for each block in the blockchain that your node downloads.
 
@@ -113,15 +152,23 @@ kill -9 $(pgrep -f "axelard start")
 
 Delete your `data` directory:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+rm -r ~/.axelar/.core/data
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 rm -r ~/.axelar_testnet/.core/data
 ```
 
-**Mainnet:**
-```bash
-rm -r ~/.axelar/.core/data
-```
+</TabItem>
+</Tabs>
 
 # Download the latest Axelar blockchain snapshot
 
@@ -139,29 +186,45 @@ Let `{SNAPSHOT_FILE}` denote the file name of the snapshot you downloaded.  Exam
 
 Decompress the downloaded snapshot into your `data` directory:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar/.core
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar_testnet/.core
 ```
 
-**Mainnet:**
-```bash
-lz4 -dc --no-sparse {SNAPSHOT_FILE} | tar xfC - ~/.axelar/.core
-```
+</TabItem>
+</Tabs>
 
 ## Resume your node
 
 Resume your Axelar node with the latest version of axelar-core:
 
-**Testnet:**
+<Tabs groupId="network" className='hidden'>
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
+```
+
+</TabItem>
+
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n testnet
 ```
 
-**Mainnet:**
-```bash
-KEYRING_PASSWORD=my-secret-password ./scripts/node.sh -n mainnet
-```
+</TabItem>
+</Tabs>
 
 Your Axelar node will launch and resume downloading the blockchain.  You should see log messages for new blocks.
 
@@ -185,5 +248,5 @@ Congratulations!  You joined the Axelar network and downloaded the blockchain.
 
 Learn what you can do with Axelar:
 
-* [Basic management of your Axelar node](/setup/basic)
+* [Basic node management](basic)
 * Tutorial: transfer UST or LUNA tokens from the Terra blockchain to EVM-compatible blockchains such as Avalanche, Ethereum, Fantom, Moonbeam, Polygon.

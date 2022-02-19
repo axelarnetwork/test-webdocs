@@ -1,5 +1,9 @@
 # Health check
------
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 Check the status of your validator.
 
@@ -9,15 +13,22 @@ Check the status of your validator.
 
 This step is not mandatory but it is good practice to help you detect and diagnose problems with your validator.
 
-**Testnet:**
+<Tabs groupId="network">
+<TabItem value="mainnet" label="Mainnet" default>
+
+```bash
+echo my-secret-password | ~/.axelar/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar/.vald
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
 ```bash
 echo my-secret-password | ~/.axelar_testnet/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar_testnet/.vald
 ```
 
-**Mainnet:**
-```bash
-echo my-secret-password | ~/.axelar/bin/axelard health-check --tofnd-host localhost --operator-addr {VALOPER_ADDR} --home ~/.axelar/.vald
-```
+</TabItem>
+</Tabs>
 
 You should see output like:
 
@@ -27,7 +38,10 @@ broadcaster check: passed
 operator check: passed
 ```
 
-> [!TIP] 
-> If you do `axelard health-check` within 50 blocks after first becoming a validator then your validator will not yet post a `heartbeat` transaction.
-> 
-> In this case, your heath check might return `stale_tss_heartbeat`.  Wait 50 blocks for your validator to automatically post a heartbeat transaction and then try `health-check` again.
+:::tip
+
+If you do `axelard health-check` within 50 blocks after first becoming a validator then your validator will not yet post a `heartbeat` transaction.
+
+In this case, your heath check might return `stale_tss_heartbeat`.  Wait 50 blocks for your validator to automatically post a heartbeat transaction and then try `health-check` again.
+
+:::

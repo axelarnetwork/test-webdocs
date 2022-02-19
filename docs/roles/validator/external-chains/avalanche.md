@@ -1,15 +1,12 @@
-# Set up your Avalanche Fuji Testnet node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
+# Avalanche
 
+Set up your Avalanche Fuji Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 8 AWS vCPU+, 16GB RAM, 100GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - [Official Documentation](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node)
-
 
 ## Install AvalancheGo
 In this guide we will be using a bash script created by the Avalanche team, which will automatically set up a running node with minimum user input required.
@@ -33,7 +30,11 @@ sudo systemctl status avalanchego
 sudo journalctl -u avalanchego -f
 ```
 
-!> IMPORTANT: By default the network will start synchronizing on the Mainnet but we want to run our node on the Avalanche Fuji testnet, so you need to stop the `avalanchego.service`, edit the `node.json` configuration file and restart the service.
+:::danger
+
+By default the network will start synchronizing on the Mainnet but we want to run our node on the Avalanche Fuji testnet, so you need to stop the `avalanchego.service`, edit the `node.json` configuration file and restart the service.
+
+:::
 
 ```bash
 sudo systemctl stop avalanchego

@@ -1,17 +1,14 @@
-# Set up your Fantom Opera node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
+# Fantom
 
+Set up your Fantom Opera node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 4 vCPU+, 100GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - Build-essential packages
 - Golang
 - [Official Documentation](https://docs.fantom.foundation/staking/run-a-read-only-node)
-
 
 ## Install required dependencies
 In order to build the `go-opera`, you first need to install all of the required dependencies.

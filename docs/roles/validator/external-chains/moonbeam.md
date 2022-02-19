@@ -1,19 +1,16 @@
-# Set up your Moonbeam (Moonbase-Alpha) Testnet node
------------
-## Disclaimer
-!> :fire: Please note that the guide below may not always be up to date with the latest version or updates from the project, so make sure you always check the official documentation first and run the latest version of software and required dependencies. If you find a problem, please submit an issue to this repository following the template.
+# Moonbeam
 
+Set up your Moonbeam (Moonbase-Alpha) Testnet node.
 
 ## Prerequisites
-- Complete all steps from [Setup with Docker](/setup/setup-with-docker.md) or [Setup with Binaries](/setup/setup-with-binaries.md)
+- [Setup your Axelar validator](/roles/validator/setup)
 - Minimum hardware requirements: 8+ cores CPU , 16GB+ RAM, 150GB+ free storage space.
 - MacOS or Ubuntu 18.04+
 - Rust (If you are compiling the binary manually)
 - [Official Documentation](https://docs.moonbeam.network/node-operators/networks/run-a-node/)
 
-
 ## Install required dependencies
-In order to compile the `moonbeam` binary by yourself, you first need to setup the required dependencies. In this guide we will be using The Release binary instead, so you can [skip](/validator/external-chains/moonbeam?id=install-moonbase-alpha) this step.
+In order to compile the `moonbeam` binary by yourself, you first need to setup the required dependencies. In this guide we will be using the release binary instead, so you can skip this step.
 
 ##### 1. Setup Rust
 
@@ -44,7 +41,11 @@ sudo chown -R moonbase_service /var/lib/alphanet-data
 ##### 3. Create the systemd service file
 After installation of `moonbase-alpha`, we are now ready to start the node but in order to ensure it is running in the background and auto-restarts in case of a server failure, we will setup a service file using systemd.
 
-!> In the service file below you need to replace `"YOUR-NODE-NAME"` and path to `moonbeam`, depending on your system configuration.
+:::note
+
+In the service file below you need to replace `"YOUR-NODE-NAME"` and path to `moonbeam`, depending on your system configuration.
+
+:::
 
 ```bash
 sudo tee <<EOF >/dev/null /etc/systemd/system/moonbeam.service
