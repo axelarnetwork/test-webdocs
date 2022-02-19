@@ -49,7 +49,7 @@ source $HOME/.profile
 ## configuration setup
 ```bash
 # have to make two tabs here, one for mainnet and one testnet
-axelard init MONIKER --chain-id CHAIN_ID
+axelard init $MONIKER --chain-id $CHAIN_ID
 # download modified config used in axelar - suggest team to do it in `init`
 wget https://raw.githubusercontent.com/axelarnetwork/axelarate-community/main/configuration/config.toml -O $HOME/.axelar/config/config.toml
 wget https://raw.githubusercontent.com/axelarnetwork/axelarate-community/main/configuration/app.toml -O $HOME/.axelar/config/app.toml
